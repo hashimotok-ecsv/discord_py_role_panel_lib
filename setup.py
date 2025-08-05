@@ -1,11 +1,12 @@
 from setuptools import setup, find_packages
 
 NAME = 'discord-py-role-panel-lib'
-VERSION = '0.0.3'
+VERSION = '0.0.5'
 
 PACKAGES = [
     'discord_py_role_panel_lib',
     'discord_py_role_panel_lib.utils',
+    'discord_py_role_panel_lib.cm',
     'discord_py_role_panel_lib.cmds',
     'discord_py_role_panel_lib.events',
     'discord_py_role_panel_lib.events.buttons',
@@ -15,7 +16,7 @@ PACKAGES = [
 setup(
     name=NAME,
     version=VERSION,
-    packages=find_packages(),
+    packages=PACKAGES,
     install_requires=[
         'discord.py>=2.5.2',
         # Add other dependencies here
