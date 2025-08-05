@@ -3,6 +3,15 @@ from setuptools import setup, find_packages
 NAME = 'discord-py-role-panel-lib'
 VERSION = '0.0.3'
 
+PACKAGES = [
+    'discord_py_role_panel_lib',
+    'discord_py_role_panel_lib.utils',
+    'discord_py_role_panel_lib.cmds',
+    'discord_py_role_panel_lib.events',
+    'discord_py_role_panel_lib.events.buttons',
+    'discord_py_role_panel_lib.events.components'
+]
+
 setup(
     name=NAME,
     version=VERSION,
