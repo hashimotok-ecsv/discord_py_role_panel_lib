@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 NAME = 'discord-py-role-panel-lib'
-VERSION = '0.0.1'
+VERSION = '0.0.2'
 
 setup(
     name=NAME,
