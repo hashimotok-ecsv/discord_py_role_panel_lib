@@ -5,4 +5,4 @@ from .events.buttons import *
 from .events.components import *
 from .utils import *
 
-__version__ = '0.0.10'
+__version__ = '0.0.11'
