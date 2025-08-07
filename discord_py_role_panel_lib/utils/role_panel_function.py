@@ -12,8 +12,8 @@ def set_custom_id(custom_id: str):
     CUSTOM_ID = custom_id
 
 def get_custom_id() -> str:
+    global CUSTOM_ID
     if CUSTOM_ID == None:
-        global CUSTOM_ID
         CUSTOM_ID = "role_panel_"
     return CUSTOM_ID
 
