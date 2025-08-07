@@ -131,7 +131,7 @@ async def send_role_panel_embed(
             text += f"\n🇻:{role_v.mention}"
             view.add_item(discord.ui.Button(emoji="🇻", custom_id=f"{get_custom_id()}🇻_type_{type_text}", style=discord.ButtonStyle.gray))
         embed.add_field(name="役職パネル", value=text, inline=False)
-        embed.add_field(name="重複許可", value=single, inline=False)
+        # embed.add_field(name="重複許可", value=single, inline=False)
         msg: discord.Message = await interaction.followup.send(content="役職パネルを投稿します")
         await interaction.channel.send(embed=embed, view=view)
         await msg.delete()
