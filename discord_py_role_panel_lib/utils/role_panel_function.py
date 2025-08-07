@@ -266,8 +266,6 @@ async def remove_role_role_panel(interaction: discord.Interaction, message: disc
 
 async def fix_select_role_panel(interaction: discord.Interaction, message: discord.Message):
     try:
-        if interaction.guild.id != 1345412103846105119:
-            await interaction.followup.send("このアプリは現在開発中です。", ephemeral=True)
         if len(message.embeds) == 0:
             await interaction.followup.send("役職パネルを選択してください。", ephemeral=True)
             return
