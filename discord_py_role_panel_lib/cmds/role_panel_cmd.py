@@ -4,7 +4,7 @@ import discord
 import traceback
 from typing import List
 
-from utils import role_panel_function as Func
+from ..utils import role_panel_function as Func
 
 class RolePanelEditModal(discord.ui.Modal, title="役職パネル編集"):
     def __init__(self, bot: commands.Bot, type: str, value: str = None):

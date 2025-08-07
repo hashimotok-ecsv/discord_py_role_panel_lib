@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import traceback
 
-from utils import role_panel_function as Func
+from ...utils import role_panel_function as Func
 
 class NormalSelectEvent():
     def __init__(self, bot: commands.Bot):

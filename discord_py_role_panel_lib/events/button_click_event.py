@@ -2,8 +2,8 @@ import discord
 from discord.ext import commands
 import traceback
 
-from events.components import normal_select_event
-from events.buttons import role_panel_button_event
+from ..events.components import normal_select_event
+from ..events.buttons import role_panel_button_event
 
 class ButtonClickCog(commands.Cog):
     def __init__(self, bot: commands.Bot):

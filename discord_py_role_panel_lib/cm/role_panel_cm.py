@@ -1,7 +1,8 @@
 from discord.ext import commands
 from discord import app_commands
 import discord
-from utils import role_panel_function as Func
+
+from ..utils import role_panel_function as Func
 
 class RolePanelContextMenuCog(commands.Cog):
     def __init__(self, bot: commands.Bot):
