@@ -2,6 +2,8 @@ import discord
 from discord.ext import commands
 import traceback
 
+from ...utils import role_panel_function as Func
+
 class RolePanelButtonEvent():
     def __init__(self, bot: commands.Bot):
         self.bot: commands.Bot = bot
@@ -9,9 +11,9 @@ class RolePanelButtonEvent():
     async def call(self, inter: discord.Interaction):
         try:
             custom_id: str = inter.data["custom_id"] #interaction.dataからcustom_idを取り出す
-            if custom_id.startswith("role_panel_"):
+            if custom_id.startswith(Func.get_custom_id()):
                 await inter.response.defer(ephemeral=True, thinking=True)
-                role_tag: str = custom_id.split("role_panel_")[1]
+                role_tag: str = custom_id.split(Func.get_custom_id())[1]
                 new_version: bool = False
                 type_text: str = None
                 if "_type_" in role_tag:

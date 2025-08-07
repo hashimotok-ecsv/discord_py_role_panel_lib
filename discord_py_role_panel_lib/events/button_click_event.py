@@ -5,6 +5,8 @@ import traceback
 from ..events.components import normal_select_event
 from ..events.buttons import role_panel_button_event
 
+from ..utils import role_panel_function as Func
+
 class ButtonClickCog(commands.Cog):
     def __init__(self, bot: commands.Bot):
         self.bot: commands.Bot = bot
@@ -39,7 +41,7 @@ class ButtonClickCog(commands.Cog):
         custom_id: str = inter.data["custom_id"]
         print(f"button: {custom_id}")
         try:
-            if custom_id.startswith("role_panel_"):
+            if custom_id.startswith(Func.get_custom_id()):
                 await self.role_panel_button_event.call(inter)
         except Exception:
             traceback.print_exc()

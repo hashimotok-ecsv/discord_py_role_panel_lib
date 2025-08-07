@@ -2,13 +2,19 @@ import discord
 from discord.ext import commands
 import traceback
 
-CUSTOM_ID: str = "role_panel"
+CUSTOM_ID: str = "role_panel_"
 
 def set_custom_id(custom_id: str):
+    if custom_id == None:
+        print("custom id id not none")
+        return
     global CUSTOM_ID
     CUSTOM_ID = custom_id
 
 def get_custom_id() -> str:
+    if CUSTOM_ID == None:
+        global CUSTOM_ID
+        CUSTOM_ID = "role_panel_"
     return CUSTOM_ID
 
 async def send_role_panel_embed(
@@ -197,7 +203,7 @@ async def add_role_role_panel(interaction: discord.Interaction, message: discord
             return
         text += f"\n{final_emoji}:{role.mention}"
         embed.set_field_at(0, name="役職パネル", value=text, inline=False)
-        view.add_item(discord.ui.Button(emoji=final_emoji, custom_id=f"role_panel_" + final_emoji, style=discord.ButtonStyle.gray))
+        view.add_item(discord.ui.Button(emoji=final_emoji, custom_id=f"{get_custom_id()}" + final_emoji, style=discord.ButtonStyle.gray))
         await message.edit(embed=embed, view=view)
         await interaction.followup.send("役職パネルを更新しました。", ephemeral=True)
     except Exception:
@@ -251,7 +257,7 @@ async def remove_role_role_panel(interaction: discord.Interaction, message: disc
             if text != "":
                 text += "\n"
             text += f"{role_emoji}:{role.mention}"
-            view.add_item(discord.ui.Button(emoji=role_emoji, custom_id=f"role_panel_{role_emoji}_type_{type_text}", style=discord.ButtonStyle.green))
+            view.add_item(discord.ui.Button(emoji=role_emoji, custom_id=f"{get_custom_id()}{role_emoji}_type_{type_text}", style=discord.ButtonStyle.green))
         embed.set_field_at(0, name="役職パネル", value=text, inline=False)
         await message.edit(embed=embed, view=view)
         await interaction.followup.send("役職パネルを更新しました。")
@@ -278,7 +284,7 @@ async def fix_select_role_panel(interaction: discord.Interaction, message: disco
                 print(temp_view.children[i])
                 if isinstance(temp_view.children[i], discord.ui.Button):
                     button: discord.ui.Button = temp_view.children[i]
-                    if button.custom_id.startswith("role_panel_"):
+                    if button.custom_id.startswith(get_custom_id()):
                         emoji = button.custom_id.split("_")[2]
                         type_text_temp = button.custom_id.split("_type_")[1] if "_type_" in button.custom_id else ""
                         if type_text_temp != "" and type_text == "":
