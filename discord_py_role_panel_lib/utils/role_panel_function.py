@@ -311,6 +311,7 @@ async def fix_select_role_panel(interaction: discord.Interaction, message: disco
         embed.set_footer(text=footer_text, icon_url=footer_icon)
 
         view: discord.ui.View = discord.ui.View()
+        text = ""
         for role_temp in role_list:
             # :任意の文字:部分を取得
             role_emoji = role_temp.split(":")[0]
