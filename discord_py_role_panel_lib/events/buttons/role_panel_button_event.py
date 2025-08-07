@@ -11,7 +11,9 @@ class RolePanelButtonEvent():
     async def call(self, inter: discord.Interaction):
         try:
             custom_id: str = inter.data["custom_id"] #interaction.dataからcustom_idを取り出す
+            print("ready role panel event")
             if custom_id.startswith(Func.get_custom_id()):
+                print("actions role panel event")
                 await inter.response.defer(ephemeral=True, thinking=True)
                 role_tag: str = custom_id.split(Func.get_custom_id())[1]
                 new_version: bool = False

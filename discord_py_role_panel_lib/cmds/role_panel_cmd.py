@@ -219,7 +219,7 @@ class RolePanelCommandCog(commands.Cog):
             elif type == "重複許可":
                 select: discord.ui.Select = discord.ui.Select(
                     placeholder="重複許可を選択してください。",
-                    custom_id="role_panel_edit_select"
+                    custom_id=f"{Func.get_custom_id()}edit_select"
                 )
                 select.add_option(label="許可", value="multiple")
                 select.add_option(label="禁止", value="single")
