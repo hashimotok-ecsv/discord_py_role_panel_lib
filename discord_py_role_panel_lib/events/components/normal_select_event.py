@@ -4,7 +4,7 @@ import traceback
 
 from ...utils import role_panel_function as Func
 
-class NormalSelectEvent():
+class RolePanelLibNormalSelectEvent():
     def __init__(self, bot: commands.Bot):
         self.bot: commands.Bot = bot
 

@@ -6,7 +6,7 @@ from typing import List
 
 from ..utils import role_panel_function as Func
 
-class RolePanelEditModal(discord.ui.Modal, title="役職パネル編集"):
+class RolePanelLibRolePanelEditModal(discord.ui.Modal, title="役職パネル編集"):
     def __init__(self, bot: commands.Bot, type: str, value: str = None):
         super().__init__()
         self.bot = bot
@@ -55,10 +55,10 @@ class RolePanelEditModal(discord.ui.Modal, title="役職パネル編集"):
             traceback.print_exc()
 
 async def send_role_panel_edit_modal(interaction: discord.Interaction, type: str, value: str = None):
-    modal = RolePanelEditModal(interaction.client, type, value)
+    modal = RolePanelLibRolePanelEditModal(interaction.client, type, value)
     await interaction.response.send_modal(modal)
 
-class RolePanelCommandCog(commands.Cog):
+class RolePanelLibRolePanelCommandCog(commands.Cog):
     def __init__(self, bot: commands.Bot):
         self.bot: commands.Bot = bot
         
@@ -241,4 +241,4 @@ class RolePanelCommandCog(commands.Cog):
     
 
 async def setup(bot: commands.Bot):
-    await bot.add_cog(RolePanelCommandCog(bot))
+    await bot.add_cog(RolePanelLibRolePanelCommandCog(bot))

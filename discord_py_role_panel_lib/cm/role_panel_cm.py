@@ -4,7 +4,7 @@ import discord
 
 from ..utils import role_panel_function as Func
 
-class RolePanelContextMenuCog(commands.Cog):
+class RolePanelLibRolePanelContextMenuCog(commands.Cog):
     def __init__(self, bot: commands.Bot):
         self.bot: commands.Bot = bot
         self.menu = app_commands.ContextMenu(
@@ -61,4 +61,4 @@ class RolePanelContextMenuCog(commands.Cog):
         await Func.fix_select_role_panel(interaction, message)
 
 async def setup(bot: commands.Bot):
-    await bot.add_cog(RolePanelContextMenuCog(bot))
+    await bot.add_cog(RolePanelLibRolePanelContextMenuCog(bot))

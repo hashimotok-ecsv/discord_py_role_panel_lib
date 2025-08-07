@@ -7,10 +7,10 @@ from ..events.buttons import role_panel_button_event
 
 from ..utils import role_panel_function as Func
 
-class ButtonClickCog(commands.Cog):
+class RolePanelLibButtonClickCog(commands.Cog):
     def __init__(self, bot: commands.Bot):
         self.bot: commands.Bot = bot
-        self.normal_select_event = normal_select_event.NormalSelectEvent(bot)
+        self.normal_select_event = normal_select_event.RolePanelLibNormalSelectEvent(bot)
         # 可読性を向上させるために、各ボタンイベントをインスタンス化
         self.role_panel_button_event = role_panel_button_event.RolePanelButtonEvent(bot)
 
@@ -48,4 +48,4 @@ class ButtonClickCog(commands.Cog):
             await inter.response.send_message(content="エラーが発生しました。", ephemeral=True)
 
 async def setup(bot: commands.Bot):
-    await bot.add_cog(ButtonClickCog(bot))
+    await bot.add_cog(RolePanelLibButtonClickCog(bot))

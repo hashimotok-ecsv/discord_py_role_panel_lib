@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import traceback
 
-class TemplateButtonEvent():
+class RolePanelLibTemplateButtonEvent():
     def __init__(self, bot: commands.Bot):
         self.bot: commands.Bot = bot
 
