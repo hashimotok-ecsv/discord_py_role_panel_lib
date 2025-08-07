@@ -66,70 +66,70 @@ async def send_role_panel_embed(
         return
     text: str = f"🇦:{role_a.mention}"
     try:
-        view.add_item(discord.ui.Button(emoji="🇦", custom_id=f"role_panel_🇦_type_{type_text}", style=discord.ButtonStyle.gray))
+        view.add_item(discord.ui.Button(emoji="🇦", custom_id=f"{get_custom_id()}🇦_type_{type_text}", style=discord.ButtonStyle.gray))
         if role_b is not None:
             text += f"\n🇧:{role_b.mention}"
-            view.add_item(discord.ui.Button(emoji="🇧", custom_id=f"role_panel_🇧_type_{type_text}", style=discord.ButtonStyle.gray))
+            view.add_item(discord.ui.Button(emoji="🇧", custom_id=f"{get_custom_id()}🇧_type_{type_text}", style=discord.ButtonStyle.gray))
         if role_c is not None:
             text += f"\n🇨:{role_c.mention}"
-            view.add_item(discord.ui.Button(emoji="🇨", custom_id=f"role_panel_🇨_type_{type_text}", style=discord.ButtonStyle.gray))
+            view.add_item(discord.ui.Button(emoji="🇨", custom_id=f"{get_custom_id()}🇨_type_{type_text}", style=discord.ButtonStyle.gray))
         if role_d is not None:
             text += f"\n🇩:{role_d.mention}"
-            view.add_item(discord.ui.Button(emoji="🇩", custom_id=f"role_panel_🇩_type_{type_text}", style=discord.ButtonStyle.gray))
+            view.add_item(discord.ui.Button(emoji="🇩", custom_id=f"{get_custom_id()}🇩_type_{type_text}", style=discord.ButtonStyle.gray))
         if role_e is not None:
             text += f"\n🇪:{role_e.mention}"
-            view.add_item(discord.ui.Button(emoji="🇪", custom_id=f"role_panel_🇪_type_{type_text}", style=discord.ButtonStyle.gray))
+            view.add_item(discord.ui.Button(emoji="🇪", custom_id=f"{get_custom_id()}🇪_type_{type_text}", style=discord.ButtonStyle.gray))
         if role_f is not None:
             text += f"\n🇫:{role_f.mention}"
-            view.add_item(discord.ui.Button(emoji="🇫", custom_id=f"role_panel_🇫_type_{type_text}", style=discord.ButtonStyle.gray))
+            view.add_item(discord.ui.Button(emoji="🇫", custom_id=f"{get_custom_id()}🇫_type_{type_text}", style=discord.ButtonStyle.gray))
         if role_g is not None:
             text += f"\n🇬:{role_g.mention}"
-            view.add_item(discord.ui.Button(emoji="🇬", custom_id=f"role_panel_🇬_type_{type_text}", style=discord.ButtonStyle.gray))
+            view.add_item(discord.ui.Button(emoji="🇬", custom_id=f"{get_custom_id()}🇬_type_{type_text}", style=discord.ButtonStyle.gray))
         if role_h is not None:
             text += f"\n🇭:{role_h.mention}"
-            view.add_item(discord.ui.Button(emoji="🇭", custom_id=f"role_panel_🇭_type_{type_text}", style=discord.ButtonStyle.gray))
+            view.add_item(discord.ui.Button(emoji="🇭", custom_id=f"{get_custom_id()}🇭_type_{type_text}", style=discord.ButtonStyle.gray))
         if role_i is not None:
             text += f"\n🇮:{role_i.mention}"
-            view.add_item(discord.ui.Button(emoji="🇮", custom_id=f"role_panel_🇮_type_{type_text}", style=discord.ButtonStyle.gray))
+            view.add_item(discord.ui.Button(emoji="🇮", custom_id=f"{get_custom_id()}🇮_type_{type_text}", style=discord.ButtonStyle.gray))
         if role_j is not None:
             text += f"\n🇯:{role_j.mention}"
-            view.add_item(discord.ui.Button(emoji="🇯", custom_id=f"role_panel_🇯_type_{type_text}", style=discord.ButtonStyle.gray))
+            view.add_item(discord.ui.Button(emoji="🇯", custom_id=f"{get_custom_id()}🇯_type_{type_text}", style=discord.ButtonStyle.gray))
         if role_k is not None:
             text += f"\n🇰:{role_k.mention}"
-            view.add_item(discord.ui.Button(emoji="🇰", custom_id=f"role_panel_🇰_type_{type_text}", style=discord.ButtonStyle.gray))
+            view.add_item(discord.ui.Button(emoji="🇰", custom_id=f"{get_custom_id()}🇰_type_{type_text}", style=discord.ButtonStyle.gray))
         if role_l is not None:
             text += f"\n🇱:{role_l.mention}"
-            view.add_item(discord.ui.Button(emoji="🇱", custom_id=f"role_panel_🇱_type_{type_text}", style=discord.ButtonStyle.gray))
+            view.add_item(discord.ui.Button(emoji="🇱", custom_id=f"{get_custom_id()}🇱_type_{type_text}", style=discord.ButtonStyle.gray))
         if role_m is not None:
             text += f"\n🇲:{role_m.mention}"
-            view.add_item(discord.ui.Button(emoji="🇲", custom_id=f"role_panel_🇲_type_{type_text}", style=discord.ButtonStyle.gray))
+            view.add_item(discord.ui.Button(emoji="🇲", custom_id=f"{get_custom_id()}🇲_type_{type_text}", style=discord.ButtonStyle.gray))
         if role_n is not None:
             text += f"\n🇳:{role_n.mention}"
-            view.add_item(discord.ui.Button(emoji="🇳", custom_id=f"role_panel_🇳_type_{type_text}", style=discord.ButtonStyle.gray))
+            view.add_item(discord.ui.Button(emoji="🇳", custom_id=f"{get_custom_id()}🇳_type_{type_text}", style=discord.ButtonStyle.gray))
         if role_o is not None:
             text += f"\n🇴:{role_o.mention}"
-            view.add_item(discord.ui.Button(emoji="🇴", custom_id=f"role_panel_🇴_type_{type_text}", style=discord.ButtonStyle.gray))
+            view.add_item(discord.ui.Button(emoji="🇴", custom_id=f"{get_custom_id()}🇴_type_{type_text}", style=discord.ButtonStyle.gray))
         if role_p is not None:
             text += f"\n🇵:{role_p.mention}"
-            view.add_item(discord.ui.Button(emoji="🇵", custom_id=f"role_panel_🇵_type_{type_text}", style=discord.ButtonStyle.gray))
+            view.add_item(discord.ui.Button(emoji="🇵", custom_id=f"{get_custom_id()}🇵_type_{type_text}", style=discord.ButtonStyle.gray))
         if role_q is not None:
             text += f"\n🇶:{role_q.mention}"
-            view.add_item(discord.ui.Button(emoji="🇶", custom_id=f"role_panel_🇶_type_{type_text}", style=discord.ButtonStyle.gray))
+            view.add_item(discord.ui.Button(emoji="🇶", custom_id=f"{get_custom_id()}🇶_type_{type_text}", style=discord.ButtonStyle.gray))
         if role_r is not None:
             text += f"\n🇷:{role_r.mention}"
-            view.add_item(discord.ui.Button(emoji="🇷", custom_id=f"role_panel_🇷_type_{type_text}", style=discord.ButtonStyle.gray))
+            view.add_item(discord.ui.Button(emoji="🇷", custom_id=f"{get_custom_id()}🇷_type_{type_text}", style=discord.ButtonStyle.gray))
         if role_s is not None:
             text += f"\n🇸:{role_s.mention}"
-            view.add_item(discord.ui.Button(emoji="🇸", custom_id=f"role_panel_🇸_type_{type_text}", style=discord.ButtonStyle.gray))
+            view.add_item(discord.ui.Button(emoji="🇸", custom_id=f"{get_custom_id()}🇸_type_{type_text}", style=discord.ButtonStyle.gray))
         if role_t is not None:
             text += f"\n🇹:{role_t.mention}"
-            view.add_item(discord.ui.Button(emoji="🇹", custom_id=f"role_panel_🇹_type_{type_text}", style=discord.ButtonStyle.gray))
+            view.add_item(discord.ui.Button(emoji="🇹", custom_id=f"{get_custom_id()}🇹_type_{type_text}", style=discord.ButtonStyle.gray))
         if role_u is not None:
             text += f"\n🇺:{role_u.mention}"
-            view.add_item(discord.ui.Button(emoji="🇺", custom_id=f"role_panel_🇺_type_{type_text}", style=discord.ButtonStyle.gray))
+            view.add_item(discord.ui.Button(emoji="🇺", custom_id=f"{get_custom_id()}🇺_type_{type_text}", style=discord.ButtonStyle.gray))
         if role_v is not None:
             text += f"\n🇻:{role_v.mention}"
-            view.add_item(discord.ui.Button(emoji="🇻", custom_id=f"role_panel_🇻_type_{type_text}", style=discord.ButtonStyle.gray))
+            view.add_item(discord.ui.Button(emoji="🇻", custom_id=f"{get_custom_id()}🇻_type_{type_text}", style=discord.ButtonStyle.gray))
         embed.add_field(name="役職パネル", value=text, inline=False)
         embed.add_field(name="重複許可", value=single, inline=False)
         msg: discord.Message = await interaction.followup.send(content="役職パネルを投稿します")
@@ -188,7 +188,7 @@ async def add_role_role_panel(interaction: discord.Interaction, message: discord
             # :任意の文字:部分を取得
             role_emoji = role_temp.split(":")[0]
             role_text = role_temp.split(":")[1]
-            view.add_item(discord.ui.Button(emoji=role_emoji, custom_id=f"role_panel_{role_emoji}_type_{type_text}", style=discord.ButtonStyle.gray))
+            view.add_item(discord.ui.Button(emoji=role_emoji, custom_id=f"{get_custom_id()}{role_emoji}_type_{type_text}", style=discord.ButtonStyle.gray))
             if role_text == role.mention:
                 await interaction.followup.send("その役職はすでに登録されています。", ephemeral=True)
                 return
@@ -264,7 +264,7 @@ async def remove_role_role_panel(interaction: discord.Interaction, message: disc
     except Exception:
         traceback.print_exc()
 
-async def fix_select_role_panel(interaction: discord.Interaction, message: discord.Message, type_text: str = None):
+async def fix_select_role_panel(interaction: discord.Interaction, message: discord.Message):
     try:
         if interaction.guild.id != 1345412103846105119:
             await interaction.followup.send("このアプリは現在開発中です。", ephemeral=True)
@@ -278,17 +278,16 @@ async def fix_select_role_panel(interaction: discord.Interaction, message: disco
         text: str = embed.fields[0].value
         role_list: list[str] = text.split("\n")
         temp_view: discord.ui.View = message.components[0]
-        if type_text == None:
-            type_text = None
-            for i in range(len(temp_view.children)):
-                print(temp_view.children[i])
-                if isinstance(temp_view.children[i], discord.ui.Button):
-                    button: discord.ui.Button = temp_view.children[i]
-                    if button.custom_id.startswith(get_custom_id()):
-                        emoji = button.custom_id.split("_")[2]
-                        type_text_temp = button.custom_id.split("_type_")[1] if "_type_" in button.custom_id else ""
-                        if type_text_temp != "" and type_text == "":
-                            type_text = type_text_temp
+        type_text: str = ""
+        for i in range(len(temp_view.children)):
+            print(temp_view.children[i])
+            if isinstance(temp_view.children[i], discord.ui.Button):
+                button: discord.ui.Button = temp_view.children[i]
+                if button.custom_id.startswith(get_custom_id()):
+                    emoji = button.custom_id.split("_")[2]
+                    type_text_temp = button.custom_id.split("_type_")[1] if "_type_" in button.custom_id else ""
+                    if type_text_temp != "" and type_text == "":
+                        type_text = type_text_temp
         if type_text == "" and len(embed.fields) >= 2:
             if embed.fields[1].name == "重複許可":
                 if embed.fields[1].value == "許可":
@@ -327,7 +326,7 @@ async def fix_select_role_panel(interaction: discord.Interaction, message: disco
             if text != "":
                 text += "\n"
             text += f"{role_emoji}:{role.mention}"
-            view.add_item(discord.ui.Button(emoji=role_emoji, custom_id=f"role_panel_{role_emoji}", style=discord.ButtonStyle.green))
+            view.add_item(discord.ui.Button(emoji=role_emoji, custom_id=f"{get_custom_id()}{role_emoji}", style=discord.ButtonStyle.green))
         embed.add_field(name="役職パネル", value=text)
         await message.edit(embed=embed, view=view)
         await interaction.followup.send("役職パネルを更新しました。", ephemeral=True)

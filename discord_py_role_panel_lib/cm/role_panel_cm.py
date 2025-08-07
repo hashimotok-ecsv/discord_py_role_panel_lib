@@ -61,5 +61,4 @@ class RolePanelContextMenuCog(commands.Cog):
         await Func.fix_select_role_panel(interaction, message)
 
 async def setup(bot: commands.Bot):
-    cog = RolePanelContextMenuCog(bot)
     await bot.add_cog(RolePanelContextMenuCog(bot))
