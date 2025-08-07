@@ -2,6 +2,15 @@ import discord
 from discord.ext import commands
 import traceback
 
+CUSTOM_ID: str = "role_panel"
+
+def set_custom_id(custom_id: str):
+    global CUSTOM_ID
+    CUSTOM_ID = custom_id
+
+def get_custom_id() -> str:
+    return CUSTOM_ID
+
 async def send_role_panel_embed(
     interaction: discord.Interaction,
     bot: commands.bot, 
