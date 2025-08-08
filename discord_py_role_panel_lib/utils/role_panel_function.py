@@ -218,7 +218,7 @@ async def add_role_role_panel(interaction: discord.Interaction, message: discord
             return
         text += f"\n{final_emoji}:{role.mention}"
         embed.set_field_at(0, name="役職パネル", value=text, inline=False)
-        view.add_item(discord.ui.Button(emoji=final_emoji, custom_id=f"{get_custom_id()}" + final_emoji, style=get_button_style()))
+        view.add_item(discord.ui.Button(emoji=final_emoji, custom_id=f"{get_custom_id()}{final_emoji}_type_{type_text}", style=get_button_style()))
         await message.edit(embed=embed, view=view)
         await interaction.followup.send("役職パネルを更新しました。", ephemeral=True)
     except Exception:
@@ -340,7 +340,7 @@ async def fix_select_role_panel(interaction: discord.Interaction, message: disco
             if text != "":
                 text += "\n"
             text += f"{role_emoji}:{role.mention}"
-            view.add_item(discord.ui.Button(emoji=role_emoji, custom_id=f"{get_custom_id()}{role_emoji}", style=get_button_style()))
+            view.add_item(discord.ui.Button(emoji=role_emoji, custom_id=f"{get_custom_id()}{role_emoji}_type_{type_text}", style=get_button_style()))
         embed.add_field(name="役職パネル", value=text)
         await message.edit(embed=embed, view=view)
         await interaction.followup.send("役職パネルを更新しました。", ephemeral=True)
