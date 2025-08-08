@@ -12,7 +12,7 @@ class RolePanelLibButtonClickCog(commands.Cog):
         self.bot: commands.Bot = bot
         self.normal_select_event = normal_select_event.RolePanelLibNormalSelectEvent(bot)
         # 可読性を向上させるために、各ボタンイベントをインスタンス化
-        self.role_panel_button_event = role_panel_button_event.RolePanelButtonEvent(bot)
+        self.role_panel_button_event = role_panel_button_event.RolePanelLibRolePanelButtonEvent(bot)
 
     # コグアンロード処理
     def cog_unload(self):
