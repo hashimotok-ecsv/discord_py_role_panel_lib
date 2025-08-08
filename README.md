@@ -78,3 +78,5 @@ async def setup_hook(self):
     except Exception:
         traceback.print_exc()  # どこでエラーが発生したか表示
 ```
+#### 管理者用
+##### 更新方法
