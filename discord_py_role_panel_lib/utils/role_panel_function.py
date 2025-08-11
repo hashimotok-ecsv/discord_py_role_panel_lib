@@ -2,6 +2,8 @@ import discord
 from discord.ext import commands
 import traceback
 
+from ..utils import role_panel_function as Func
+
 CUSTOM_ID: str = "role_panel_"
 BUTTON_COLOR: discord.ButtonStyle = discord.ButtonStyle.primary
 
@@ -180,7 +182,7 @@ async def add_role_role_panel(interaction: discord.Interaction, message: discord
         for child in view.children:
             print(child)
             print(type(child))
-            if isinstance(child, discord.ui.Button):
+            if isinstance(child, discord.components.Button):
                 button = child
                 break
         type_text: str = None
@@ -239,10 +241,13 @@ async def remove_role_role_panel(interaction: discord.Interaction, message: disc
         text: str = ""
         role_list: list[str] = embed.fields[0].value.split("\n")
         view: discord.ui.View = message.components[0]
+        type_text: str = ""
         button: discord.ui.Button = None
         for child in view.children:
-            if isinstance(child, discord.ui.Button):
-                button = child
+            if isinstance(child, discord.components.Button):
+                cp_btn: discord.components.Button = child
+                label: str = cp_btn.custom_id.replace(Func.get_custom_id(), "").split("_type_")[0]
+                button: discord.ui.Button = discord.ui.Button(label=label, style=cp_btn.style, custom_id=cp_btn.custom_id)
                 break
         if button != None:
             if "_type_" in button.custom_id:
@@ -297,8 +302,10 @@ async def fix_select_role_panel(interaction: discord.Interaction, message: disco
         type_text: str = ""
         for i in range(len(temp_view.children)):
             print(temp_view.children[i])
-            if isinstance(temp_view.children[i], discord.ui.Button):
-                button: discord.ui.Button = temp_view.children[i]
+            if isinstance(temp_view.children[i], discord.components.Button):
+                cp_btn: discord.components.Button = temp_view.children[i]
+                label: str = cp_btn.custom_id.replace(Func.get_custom_id(), "").split("_type_")[0]
+                button: discord.ui.Button = discord.ui.Button(label=label, style=cp_btn.style, custom_id=cp_btn.custom_id)
                 if button.custom_id.startswith(get_custom_id()):
                     emoji = button.custom_id.split("_")[2]
                     type_text_temp = button.custom_id.split("_type_")[1] if "_type_" in button.custom_id else ""
