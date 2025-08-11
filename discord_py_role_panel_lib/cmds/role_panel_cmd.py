@@ -178,7 +178,6 @@ class RolePanelLibRolePanelCommandCog(commands.Cog):
     @app_commands.command(name="役職パネル編集", description="役職付与パネルを編集します。")
     @app_commands.checks.has_permissions(administrator=True)
     @app_commands.describe(type="編集する項目(必須)")
-    @app_commands.describe(value="編集後の値(任意)")
     @app_commands.autocomplete(type=role_panel_edit_cmd_autocomplete)
     async def role_panel_edit(
         self,
