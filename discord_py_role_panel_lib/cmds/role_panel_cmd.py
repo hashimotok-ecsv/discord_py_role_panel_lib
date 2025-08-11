@@ -178,6 +178,7 @@ class RolePanelLibRolePanelCommandCog(commands.Cog):
     @app_commands.command(name="役職パネル編集", description="役職付与パネルを編集します。")
     @app_commands.checks.has_permissions(administrator=True)
     @app_commands.describe(type="編集する項目(必須)")
+    @app_commands.describe(value="編集後の値(任意)")
     @app_commands.autocomplete(type=role_panel_edit_cmd_autocomplete)
     async def role_panel_edit(
         self,
@@ -189,43 +190,30 @@ class RolePanelLibRolePanelCommandCog(commands.Cog):
             if interaction.user.id not in Func.select_role_panel:
                 await interaction.response.send_message("役職パネルを選択してください。", ephemeral=True)
                 return
-            await interaction.response.defer(ephemeral=True)
             message_id = Func.select_role_panel[interaction.user.id]
             message = await interaction.channel.fetch_message(message_id)
             if message == None:
-                await interaction.followup.send("役職パネルのメッセージが見つかりません。", ephemeral=True)
+                await interaction.response.send_message("役職パネルのメッセージが見つかりません。", ephemeral=True)
                 return
             embed = message.embeds[0]
             if embed == None:
-                await interaction.followup.send("役職パネルが見つかりません。", ephemeral=True)
+                await interaction.response.send_message("役職パネルが見つかりません。", ephemeral=True)
                 return
-            if type == "タイトル":
-                if value == None:
-                    await interaction.followup.send("タイトルを入力してください。", ephemeral=True)
-                    return
-                if embed.title == value:
-                    await interaction.followup.send("タイトルは変更されていません。", ephemeral=True)
-                    return
-                embed.title = value
-            elif type == "説明":
-                if value == None:
-                    await interaction.followup.send("説明を入力してください。", ephemeral=True)
-                    return
-                if embed.description == value:
-                    await interaction.followup.send("説明は変更されていません。", ephemeral=True)
-                    return
-                value = value.replace("/n", "\n") if "/n" in value else value
-                embed.description = value
-            elif type == "重複許可":
+            if type in ["タイトル", "説明"]:
+                value = embed.title if type == "タイトル" else embed.description
+                await send_role_panel_edit_modal(interaction, type, value)
+                return
+            await interaction.response.defer(ephemeral=True)
+            if type == "重複許可":
                 select: discord.ui.Select = discord.ui.Select(
                     placeholder="重複許可を選択してください。",
-                    custom_id=f"{Func.get_custom_id()}edit_select"
+                    custom_id="mp_role_panel_edit_select"
                 )
-                select.add_option(label="許可", value="multiple")
-                select.add_option(label="禁止", value="single")
-                select.add_option(label="特殊", value="special")
-                select.add_option(label="付与専用", value="add_only")
-                select.add_option(label="取り外し専用", value="remove_only")
+                select.add_option(label="許可", value="許可")
+                select.add_option(label="禁止", value="禁止")
+                select.add_option(label="特殊", value="特殊")
+                select.add_option(label="付与専用", value="付与専用")
+                select.add_option(label="取り外し専用", value="取り外し専用")
                 view: discord.ui.View = discord.ui.View()
                 view.add_item(select)
                 await interaction.followup.send(
