@@ -179,6 +179,7 @@ async def add_role_role_panel(interaction: discord.Interaction, message: discord
         button: discord.ui.Button = None
         for child in view.children:
             print(child)
+            print(type(child))
             if isinstance(child, discord.ui.Button):
                 button = child
                 break
