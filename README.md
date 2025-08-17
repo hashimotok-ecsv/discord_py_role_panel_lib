@@ -81,6 +81,7 @@ async def setup_hook(self):
 #### 管理者用
 ##### 更新方法
 ```bash
+Remove-Item -Recurse -Force .\dist\
 py setup.py sdist
 py setup.py bdist_wheel
 py -m twine upload --repository testpypi dist/*

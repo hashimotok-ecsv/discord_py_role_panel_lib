@@ -208,11 +208,11 @@ class RolePanelLibRolePanelCommandCog(commands.Cog):
                     placeholder="重複許可を選択してください。",
                     custom_id=f"{Func.get_custom_id()}edit_select"
                 )
-                select.add_option(label="許可", value="許可")
-                select.add_option(label="禁止", value="禁止")
-                select.add_option(label="特殊", value="特殊")
-                select.add_option(label="付与専用", value="付与専用")
-                select.add_option(label="取り外し専用", value="取り外し専用")
+                select.add_option(label="許可", value="multiple")
+                select.add_option(label="禁止", value="single")
+                select.add_option(label="特殊", value="special")
+                select.add_option(label="付与専用", value="add_only")
+                select.add_option(label="取り外し専用", value="remove_only")
                 view: discord.ui.View = discord.ui.View()
                 view.add_item(select)
                 await interaction.followup.send(
