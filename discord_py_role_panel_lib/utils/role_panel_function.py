@@ -65,7 +65,8 @@ async def send_role_panel_embed(
     ):
     await interaction.response.defer()
     embed: discord.Embed = discord.Embed(title=title, description=description, color=0x00bfff)
-    embed.set_footer(text=bot.user.name, icon_url=bot.user.avatar.url)
+    if bot:
+        embed.set_footer(text=bot.user.name, icon_url=bot.user.avatar.url)
     view: discord.ui.View = discord.ui.View()
     type_text: str = None
     if single == "許可":
